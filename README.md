@@ -1,1 +1,0 @@
-Schaeffler Digital Board

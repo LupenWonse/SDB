@@ -1,11 +1,13 @@
-<script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
-<button button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed">
-    {{item.label}}
-    <i class="fab fa-500px"></i>
+<button class="btn btn-lg btn-block" [class.btn-primary]="item.level==0" [class.btn-dark]="item.level==1" [class.btn-light]="item.level==2" (click)="onItemClick();">
+    <i class="fa {{item.icon}} fa-lg fa-pull-left"></i>
+    <label ngButtonLabel>
+        {{item.label}}
+    </label>
+    <i class="fa fa-caret-right fa-lg pull-right" [class.fa-rotate-90]="!isCollapsed" *ngIf="item.children"></i>
 </button>
-<i class="fab fa-500px"></i>
+
 
 <!--Children-->
-<app-list-item *ngFor="let item of item.children" [item]="item" [ngbCollapse]="isCollapsed">
+<app-list-item *ngFor="let item of item.children" [item]="item" [ngbCollapse]="isCollapsed" >
     {{item.label}}
 </app-list-item>

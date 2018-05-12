@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-@import '../BootstrapCSS/css/bootstrap.min.css'
+.sidebar{
+    position: absolute;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+app-list-item{
+    margin: 0px;
+    width: 100%;
+}
+
+body, html{
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
