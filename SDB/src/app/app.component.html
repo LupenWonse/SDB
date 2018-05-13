@@ -31,11 +31,6 @@
                                 [title]="test"
                                 [markerDraggable]="m.draggable"
                                 (dragEnd)="markerDragEnd(m, $event)">
-
-                        <agm-info-window>
-                            <strong>InfoWindow content</strong>
-                        </agm-info-window>
-
                     </agm-marker>
                 </agm-map>
                 <app-image-viewer class="h-100" (onClosed)="onImageClosed($event)"></app-image-viewer>
