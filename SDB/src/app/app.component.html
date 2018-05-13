@@ -1,13 +1,49 @@
 <div class="container.fluid"> 
+    <div class="row justify-content-center">
+        <button  *ngIf = "model != 'Regional'" class="btn btn-danger" (click)="model = 'Regional'">
+            <label>
+                <i class="fa fa-times-circle fa-lg"></i>
+            </label>
+        </button>
+        <h2>{{model}}</h2>
+    </div>
+
+
     <div class="row"> 
         <div class="col-sm">
             <div class='chart-image'>
-                <app-image-viewer></app-image-viewer>
+                <agm-map *ngIf="displayedImage == ''" 
+                         [mapTypeId] = "'hybrid'"
+                         [latitude]="lat"
+                         [longitude]="lng"
+                         [zoom]="zoom"
+                         [disableDefaultUI]="true"
+                         [zoomControl]="false"
+                         [mapDraggable] = "false"
+                         >
+                    <agm-marker 
+                                *ngFor="let m of markers; let i = index"
+                                iconUrl="../../assets/label.png"
+                                (markerClick)="clickedMarker(m.label, i)"
+                                [latitude]="m.lat"
+                                [longitude]="m.lng"
+                                [label]="m.label"
+                                [title]="test"
+                                [markerDraggable]="m.draggable"
+                                (dragEnd)="markerDragEnd(m, $event)">
+
+                        <agm-info-window>
+                            <strong>InfoWindow content</strong>
+                        </agm-info-window>
+
+                    </agm-marker>
+                </agm-map>
+                <app-image-viewer (onClosed)="onImageClosed($event)"></app-image-viewer>
             </div>
         </div> 
         <div class="col-3 sidebar" > 
             <div class="btn-group-vertical btn-block"> 
                 <app-list-item *ngFor="let item of menuItems" [item]="item"></app-list-item>
-        </div> 
-    </div>  
-</div>
+            </div> 
+        </div>  
+    </div>

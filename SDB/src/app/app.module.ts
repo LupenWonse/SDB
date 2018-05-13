@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgImageAppear } from 'ng-image-appear';
 
+import { AgmCoreModule} from '@agm/core';
+
 
 import { AppComponent } from './app.component';
 import { AccordionComponent } from './accordion/accordion.component';
@@ -20,7 +22,10 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    FormsModule
+    FormsModule,
+      AgmCoreModule.forRoot({
+          apiKey: 'AIzaSyDZgRqQsxZFkhAwj3CUGW1VSRnu1IujzZI'
+      })
   ],
   providers: [],
   bootstrap: [AppComponent]

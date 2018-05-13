@@ -1,13 +1,79 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuItem } from './menuItem';
+import { MouseEvent } from '@agm/core';
+import { ImageLoaderService } from './image-loader.service'
+
+interface marker {
+	lat: number;
+	lng: number;
+	label?: string;
+	draggable: boolean;
+}
+
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
+    displayedImage : string ='';
     title = 'Schaeffler Digital Board';
+    model = "Regional";
+    zoom: number = 4;
+  // initial center position for the map
+  lng: number = -80.9267;
+  lat: number = 35.0950;
+
+    constructor(private imageLoaderService: ImageLoaderService ) { }
+    
+ ngOnInit() {
+      this.imageLoaderService.getImage().subscribe(next => this.displayedImage = next);
+  }
+    
+  clickedMarker(label: string, index: number) {
+    console.log(`clicked the marker: ${label || index}`)
+      this.model = label;
+  }
+  
+ // mapClicked($event: MouseEvent) {
+//    this.markers.push({
+  //    lat: $event.coords.lat,
+    //  lng: $event.coords.lng,
+//      draggable: true
+//    });
+//  }
+  
+  markerDragEnd(m: marker, $event: MouseEvent) {
+    console.log('dragEnd', m, $event);
+  }
+    
+    onImageClosed() {
+        this.displayedImage = '';
+    }
+  
+  markers: marker[] = [
+	  {
+		  lng: -80.9267,
+		  lat: 35.0950,
+		  label: 'Fort Mill',
+		  draggable: true
+	  },
+	  {
+		  lat: 51.373858,
+		  lng: 7.215982,
+		  label: 'B',
+		  draggable: false
+	  },
+	  {
+		  lat: 51.723858,
+		  lng: 7.895982,
+		  label: 'C',
+		  draggable: true
+	  }
+  ]
+    
 
 menuItems: MenuItem[] = [
     {id: 1, level: 0, label : "Automotive", icon:"fa-car", link : "Hello", children: [
@@ -51,4 +117,8 @@ menuItems: MenuItem[] = [
         ]}
     ]}
 ];
+    
+    
 }
+
+

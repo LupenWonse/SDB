@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { ImageLoaderService} from '../image-loader.service';
 import { Observable } from 'rxjs';
 
@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class ImageViewerComponent implements OnInit {
 
     public image: string;
+    @Output() onClosed = new EventEmitter<boolean>();
 
   constructor(private imageLoaderService: ImageLoaderService ) { }
 
@@ -18,4 +19,12 @@ export class ImageViewerComponent implements OnInit {
       this.imageLoaderService.getImage().subscribe(next => this.image = next);
   }
 
+    close() {
+        console.log("Emitting");
+        this.onClosed.emit();
+    }
+    
+    vote(agreed: boolean) {
+        this.onVoted.emit(agreed);
+    }
 }
