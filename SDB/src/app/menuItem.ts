@@ -3,6 +3,6 @@ export class MenuItem{
     level: number;
     icon: string;
     label: string;
-    link: string;
+    charts: string[];
     children: MenuItem[];
 }
