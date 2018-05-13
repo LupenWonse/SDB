@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     constructor(private imageLoaderService: ImageLoaderService ) { }
     
  ngOnInit() {
-      this.imageLoaderService.getImage().subscribe(next => this.displayedImage = next);
+      this.imageLoaderService.getImage().subscribe(next => this.displayedImage = next[0]);
   }
     
   clickedMarker(label: string, index: number) {
