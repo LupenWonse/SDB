@@ -58,19 +58,19 @@ export class AppComponent implements OnInit {
 		  lng: -80.9267,
 		  lat: 35.0950,
 		  label: 'Fort Mill',
-		  draggable: true
+          draggable: false;
 	  },
 	  {
-		  lat: 51.373858,
-		  lng: 7.215982,
-		  label: 'B',
-		  draggable: false
+		  lat: 32.686114,
+		  lng: -79.897184,
+		  label: 'Cheraw',
+          draggable: false;
 	  },
 	  {
-		  lat: 51.723858,
-		  lng: 7.895982,
-		  label: 'C',
-		  draggable: true
+		  lat: 20.787378,
+		  lng: -101.337117,
+		  label: 'Irapuato',
+          draggable: false;
 	  }
   ]
     
