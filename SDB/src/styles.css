@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 .sidebar{
     position: absolute;
-    height: 100vh;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 app-list-item{
@@ -17,5 +17,17 @@ body, html{
 }
 
 agm-map{
-    height: 100vh;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.mainView{
+    position: absolute;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+app-image-viewer{
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }

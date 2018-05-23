@@ -11,11 +11,14 @@ interface marker {
 }
 
 
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css']
 })
+
+
 
 export class AppComponent implements OnInit {
     displayedImage : string ='';
@@ -25,6 +28,8 @@ export class AppComponent implements OnInit {
   // initial center position for the map
   lng: number = -80.9267;
   lat: number = 35.0950;
+    
+    
 
     constructor(private imageLoaderService: ImageLoaderService ) { }
     
@@ -55,26 +60,25 @@ export class AppComponent implements OnInit {
   
   markers: marker[] = [
 	  {
+          label:'Fort Mill',
 		  lng: -80.9267,
 		  lat: 35.0950,
-		  label: 'Fort Mill',
-          draggable: false;
+          draggable: false,
 	  },
 	  {
 		  lat: 32.686114,
 		  lng: -79.897184,
 		  label: 'Cheraw',
-          draggable: false;
+          draggable: false,
 	  },
 	  {
 		  lat: 20.787378,
 		  lng: -101.337117,
 		  label: 'Irapuato',
-          draggable: false;
+          draggable: false,
 	  }
   ]
     
-
 menuItems: MenuItem[] = [
     {id: 1, level: 0, label : "Automotive", icon:"fa-car", charts : [], children: [
         {id: 2, icon: "fa-check-circle", level: 1, label : "Quality", charts : [], children: [
@@ -90,7 +94,7 @@ menuItems: MenuItem[] = [
              {id: 4,icon: "", level: 2, label : "Value Added", charts : ['12_Chart 3.jpg','13_Chart 4.jpg'],children : []},
         ]},
         {id: 3, icon: "fa-truck" ,level: 1, label : "Delivery", charts : [],children:[
-             {id: 4,icon: "", level: 2, label : "Devliery", charts : ['10_Chart 4.jpg','11_Chart 5.jpg'],children : []},
+             {id: 4,icon: "", level: 2, label : "Delivery", charts : ['10_Chart 4.jpg','11_Chart 5.jpg'],children : []},
         ]}
     ]},
     {id: 1, level: 0, label : "Industrial", icon:"fa-industry", charts : [], children: [
@@ -107,7 +111,7 @@ menuItems: MenuItem[] = [
              {id: 4,icon: "", level: 2, label : "Value Added", charts : ['12_Chart 3.jpg','13_Chart 4.jpg'],children : []},
         ]},
         {id: 3, icon: "fa-truck" ,level: 1, label : "Delivery", charts : [],children:[
-             {id: 4,icon: "", level: 2, label : "Devliery", charts : ['10_Chart 4.jpg','11_Chart 5.jpg'],children : []},
+             {id: 4,icon: "", level: 2, label : "Delivery", charts : ['10_Chart 4.jpg','11_Chart 5.jpg'],children : []},
         ]}
     ]}
 ];
