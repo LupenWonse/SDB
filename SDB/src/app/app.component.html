@@ -13,13 +13,20 @@
     <div class="row h-100" > 
         <div class="col p-0 mainView">
                 <agm-map *ngIf="displayedImage == ''" 
-                         [mapTypeId] = "'hybrid'"
+                         [mapTypeId] = "'roadmap'"
                          [latitude]="lat"
                          [longitude]="lng"
                          [zoom]="zoom"
                          [disableDefaultUI]="true"
-                         [zoomControl]="false"
-                         [mapDraggable] = "false"
+                         [zoomControl]="true"
+                         [mapDraggable] = "true"
+                         [styles] = "[
+            {
+              featureType: 'administrative.province',
+              elementType: 'labels.text',
+              stylers: [{visibility:'off'}]
+            }
+          ]"
                          >
                     <agm-marker 
                                 *ngFor="let m of markers; let i = index"
