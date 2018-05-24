@@ -31,3 +31,8 @@ app-image-viewer{
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
+
+.offlineMap{
+    overflow-y: scroll;
+    height: 100%;
+}
