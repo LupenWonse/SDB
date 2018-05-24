@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
 menuItems: MenuItem[] = [
     {id: 1, level: 0, label : "Automotive", icon:"fa-car", charts : [], children: [
         {id: 2, icon: "fa-check-circle", level: 1, label : "Quality", charts : [], children: [
-            {id: 2, icon: "",level: 2, label : "Customer Complaints", charts : ['1_Chart1.jpg', '2_Chart 2.jpg'],children : []},
+            {id: 2, icon: "",level: 2, label : "Customer Complaints", charts : ['1_Chart 1.jpg', '2_Chart 2.jpg'],children : []},
             {id: 2, icon: "",level: 2, label : "Scrap", charts : ['3_Chart 1.jpg', '4_Chart 3.jpg'], children : []},
             {id: 2, icon: "",level: 2, label : "Material Consumption Variance", charts : ['8_Chart 6.jpg','7_Chart 2.jpg'],children : []},
             {id: 2, icon: "",level: 2, label : "External Sorting Cost", charts : [],children : []},
