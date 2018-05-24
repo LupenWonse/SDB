@@ -39,3 +39,4 @@ testem.log
 Thumbs.db
 
 /open-iconic-master/
+/src/assets/charts/*
