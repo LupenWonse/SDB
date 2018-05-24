@@ -1,0 +1,20 @@
+[
+  {
+    "label": "Fort Mill",
+    "lng": -80.9267,
+    "lat": 35.095,
+    "draggable": false
+  },
+  {
+    "lat": 32.686114,
+    "lng": -79.897184,
+    "label": "Cheraw",
+    "draggable": false
+  },
+  {
+    "lat": 20.787378,
+    "lng": -101.337117,
+    "label": "Irapuato",
+    "draggable": false
+  }
+]

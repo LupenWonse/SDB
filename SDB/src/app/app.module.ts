@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgImageAppear } from 'ng-image-appear';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AgmCoreModule} from '@agm/core';
 import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
@@ -23,6 +25,7 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
     BrowserModule,
     NgbModule.forRoot(),
     FormsModule,
+      HttpClientModule,
       AgmCoreModule.forRoot(),
       AgmJsMarkerClustererModule,
   ],

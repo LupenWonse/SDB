@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from './menuItem';
 import { MouseEvent } from '@agm/core';
+import { HttpClient } from '@angular/common/http';
 import { ClusterManager } from '@agm/js-marker-clusterer';
 import { ImageLoaderService } from './image-loader.service';
 import { menuItems } from './menuItemsData';
@@ -33,16 +34,15 @@ export class AppComponent implements OnInit {
     
     
 
-    constructor(private imageLoaderService: ImageLoaderService) { }
+    constructor(private imageLoaderService: ImageLoaderService,private http: HttpClient ) { }
     
-    private menuItems : MenuItem[];
-    private markers : marker[] ;
+    menuItems : any;
+    markers : any;
     
  ngOnInit() {
       this.imageLoaderService.getImage().subscribe(next => this.displayedImage = next[0]);
-     this.menuItems = menuItems;
-     this.markers = locations;
-     
+      this.http.get('./assets/menuItems.json').subscribe(data => this.menuItems = data );
+     this.http.get('./assets/mapLocations.json').subscribe(data => this.markers = data );
   }
     
   clickedMarker(label: string, index: number) {
@@ -145,7 +145,9 @@ export class AppComponent implements OnInit {
               elementType: 'labels.text.stroke',
               stylers: [{color: '#17263c'}]
             }
-          ]   
+          ]
+  
+    
 }
 
 
