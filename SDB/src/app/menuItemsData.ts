@@ -11,14 +11,14 @@ export const menuItems : MenuItem[] = [
             { 
                 "id": 2, 
                 "icon": "fa-check-circle", 
-                "level": 1, 
+                "level": 2, 
                 "label": "Quality", 
                 "charts": [], 
                 "children": [ 
                     { 
                         "id": 2, 
                         "icon": "", 
-                        "level": 2, 
+                        "level": 3, 
                         "label": "Customer Complaints", 
                         "charts": [ 
                             "1_Chart 1.jpg", 
@@ -29,7 +29,7 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 2, 
                         "icon": "", 
-                        "level": 2, 
+                        "level": 3, 
                         "label": "Scrap", 
                         "charts": [ 
                             "3_Chart 1.jpg", 
@@ -40,7 +40,7 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 2, 
                         "icon": "", 
-                        "level": 2, 
+                        "level": 3, 
                         "label": "Material Consumption Variance", 
                         "charts": [ 
                             "8_Chart 6.jpg", 
@@ -51,7 +51,7 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 2, 
                         "icon": "", 
-                        "level": 2, 
+                        "level": 3, 
                         "label": "External Sorting Cost", 
                         "charts": [], 
                         "children": [] 
@@ -59,7 +59,7 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 2, 
                         "icon": "", 
-                        "level": 2, 
+                        "level": 3, 
                         "label": "Supplier Complaints", 
                         "charts": [], 
                         "children": [] 
@@ -69,14 +69,14 @@ export const menuItems : MenuItem[] = [
             { 
                 "id": 3, 
                 "icon": "fa-money", 
-                "level": 1, 
+                "level": 2, 
                 "label": "Cost", 
                 "charts": [], 
                 "children": [ 
                     { 
                         "id": 2, 
                         "icon": "", 
-                        "level": 2, 
+                        "level": 3, 
                         "label": "Inventory", 
                         "charts": [ 
                             "5_Chart 1.jpg", 
@@ -87,7 +87,7 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 4, 
                         "icon": "", 
-                        "level": 2, 
+                        "level": 3, 
                         "label": "Direct Personnel Deviation", 
                         "charts": [ 
                             "9_Chart 1.jpg" 
@@ -97,7 +97,7 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 4, 
                         "icon": "", 
-                        "level": 2, 
+                        "level": 3, 
                         "label": "Value Added", 
                         "charts": [ 
                             "12_Chart 3.jpg", 
@@ -110,14 +110,14 @@ export const menuItems : MenuItem[] = [
             { 
                 "id": 3, 
                 "icon": "fa-truck", 
-                "level": 1, 
+                "level": 2, 
                 "label": "Delivery", 
                 "charts": [], 
                 "children": [ 
                     { 
                         "id": 4, 
                         "icon": "", 
-                        "level": 2, 
+                        "level": 3, 
                         "label": "Delivery", 
                         "charts": [ 
                             "10_Chart 4.jpg", 
@@ -139,7 +139,7 @@ export const menuItems : MenuItem[] = [
             {
 
                 "id": 1, 
-                "level": 0, 
+                "level": 1, 
                 "label": "Automotive", 
                 "icon": "fa-car", 
                 "charts": [], 
@@ -147,14 +147,14 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 2, 
                         "icon": "fa-check-circle", 
-                        "level": 1, 
+                        "level": 2, 
                         "label": "Quality", 
                         "charts": [], 
                         "children": [ 
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Customer Complaints", 
                                 "charts": [ 
                                     "1_Chart1.jpg", 
@@ -165,7 +165,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Scrap", 
                                 "charts": [ 
                                     "3_Chart 1.jpg", 
@@ -176,7 +176,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Material Consumption Variance", 
                                 "charts": [ 
                                     "8_Chart 6.jpg", 
@@ -187,7 +187,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "External Sorting Cost", 
                                 "charts": [], 
                                 "children": [] 
@@ -195,7 +195,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Supplier Complaints", 
                                 "charts": [], 
                                 "children": [] 
@@ -205,14 +205,14 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 3, 
                         "icon": "fa-money", 
-                        "level": 1, 
+                        "level": 2, 
                         "label": "Cost", 
                         "charts": [], 
                         "children": [ 
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Inventory", 
                                 "charts": [ 
                                     "5_Chart 1.jpg", 
@@ -223,7 +223,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 4, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Direct Personnel Deviation", 
                                 "charts": [ 
                                     "9_Chart 1.jpg" 
@@ -233,7 +233,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 4, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Value Added", 
                                 "charts": [ 
                                     "12_Chart 3.jpg", 
@@ -246,14 +246,14 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 3, 
                         "icon": "fa-truck", 
-                        "level": 1, 
+                        "level": 2, 
                         "label": "Delivery", 
                         "charts": [], 
                         "children": [ 
                             { 
                                 "id": 4, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Delivery", 
                                 "charts": [ 
                                     "10_Chart 4.jpg", 
@@ -268,7 +268,7 @@ export const menuItems : MenuItem[] = [
             {
 
                 "id": 1, 
-                "level": 0, 
+                "level": 1, 
                 "label": "Industrial", 
                 "icon": "fa-industry", 
                 "charts": [], 
@@ -276,14 +276,14 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 2, 
                         "icon": "fa-check-circle", 
-                        "level": 1, 
+                        "level": 2, 
                         "label": "Quality", 
                         "charts": [], 
                         "children": [ 
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Customer Complaints", 
                                 "charts": [ 
                                     "1_Chart1.jpg", 
@@ -294,7 +294,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Scrap", 
                                 "charts": [ 
                                     "3_Chart 1.jpg", 
@@ -305,7 +305,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Material Consumption Variance", 
                                 "charts": [ 
                                     "8_Chart 6.jpg", 
@@ -316,7 +316,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "External Sorting Cost", 
                                 "charts": [], 
                                 "children": [] 
@@ -324,7 +324,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Supplier Complaints", 
                                 "charts": [], 
                                 "children": [] 
@@ -334,14 +334,14 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 3, 
                         "icon": "fa-money", 
-                        "level": 1, 
+                        "level": 2, 
                         "label": "Cost", 
                         "charts": [], 
                         "children": [ 
                             { 
                                 "id": 2, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Inventory", 
                                 "charts": [ 
                                     "5_Chart 1.jpg", 
@@ -352,7 +352,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 4, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Direct Personnel Deviation", 
                                 "charts": [ 
                                     "9_Chart 1.jpg" 
@@ -362,7 +362,7 @@ export const menuItems : MenuItem[] = [
                             { 
                                 "id": 4, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Value Added", 
                                 "charts": [ 
                                     "12_Chart 3.jpg", 
@@ -375,14 +375,14 @@ export const menuItems : MenuItem[] = [
                     { 
                         "id": 3, 
                         "icon": "fa-truck", 
-                        "level": 1, 
+                        "level": 2, 
                         "label": "Delivery", 
                         "charts": [], 
                         "children": [ 
                             { 
                                 "id": 4, 
                                 "icon": "", 
-                                "level": 2, 
+                                "level": 3, 
                                 "label": "Delivery", 
                                 "charts": [ 
                                     "10_Chart 4.jpg", 

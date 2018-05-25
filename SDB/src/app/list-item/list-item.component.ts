@@ -18,9 +18,9 @@ export class ListItemComponent implements OnInit {
   }
   
   public onItemClick(){
-    if (this.item.children.length > 0){
+    if (this.item.level === 0) {
         this.isCollapsed = !this.isCollapsed;
-    } else {
+    } else if (this.item.level === 2) {
         console.log(this.item.charts);
         this.imageLoaderService.setImage(this.item.charts);
     }
