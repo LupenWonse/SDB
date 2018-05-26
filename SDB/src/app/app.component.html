@@ -21,13 +21,14 @@
                          [zoomControl]="true"
                          [mapDraggable] = "true"
                          [styles] = "[
-            {
-              featureType: 'administrative.province',
-              elementType: 'labels.text',
-              stylers: [{visibility:'off'}]
-            }
-          ]"
+                                        {
+                                          featureType: 'administrative.province',
+                                          elementType: 'labels.text',
+                                          stylers: [{visibility:'off'}]
+                                        }
+                                      ]"
                          >
+                    <agm-marker-cluster imagePath="./assets/cluster">
                     <agm-marker 
                                 *ngFor="let m of markers; let i = index"
                                 iconUrl="./assets/label.png"
@@ -39,6 +40,8 @@
                                 [markerDraggable]="m.draggable"
                                 (dragEnd)="markerDragEnd(m, $event)">
                     </agm-marker>
+                    </agm-marker-cluster>
+                    
                 </agm-map>
                 <app-image-viewer *ngIf="displayedImage != ''"  class="h-100" (onClosed)="onImageClosed($event)"></app-image-viewer> 
         </div> 

@@ -1,9 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from './menuItem';
 import { MouseEvent } from '@agm/core';
-import { ImageLoaderService } from './image-loader.service'
-import { menuItems } from './menuItemsData'
-import { locations } from './locationsData' 
+import { ClusterManager } from '@agm/js-marker-clusterer';
+import { ImageLoaderService } from './image-loader.service';
+import { menuItems } from './menuItemsData';
+import { locations } from './locationsData' ;
+
+
+interface marker {
+	lat: number;
+	lng: number;
+	label?: string;
+	draggable: boolean;
+}
 
 @Component({
     selector: 'app-root',
@@ -24,15 +33,16 @@ export class AppComponent implements OnInit {
     
     
 
-    constructor(private imageLoaderService: ImageLoaderService ) { }
+    constructor(private imageLoaderService: ImageLoaderService) { }
     
     private menuItems : MenuItem[];
-    locations : marker[] ;
+    private markers : marker[] ;
     
  ngOnInit() {
       this.imageLoaderService.getImage().subscribe(next => this.displayedImage = next[0]);
      this.menuItems = menuItems;
      this.markers = locations;
+     
   }
     
   clickedMarker(label: string, index: number) {

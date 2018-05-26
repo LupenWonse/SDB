@@ -13,7 +13,7 @@ export const locations : marker[] = [
           draggable: false,
 	  },
       {
-          label: 'Stratssssford AS',
+          label: 'Stratford AS',
           lat: 43.356231,
 		  lng: -81.008342,
           draggable: false,
