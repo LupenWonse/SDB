@@ -23,9 +23,7 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
     BrowserModule,
     NgbModule.forRoot(),
     FormsModule,
-      AgmCoreModule.forRoot({
-          apiKey: 'AIzaSyDZgRqQsxZFkhAwj3CUGW1VSRnu1IujzZI'
-      }),
+      AgmCoreModule.forRoot(),
       AgmJsMarkerClustererModule,
   ],
   providers: [],
