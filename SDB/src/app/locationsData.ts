@@ -50,8 +50,8 @@ export const locations : marker[] = [
 	  },
       {
           label: 'Cheraw 1 & 5',
-          lat: 34.685248,
-		  lng: -78.895565,
+          lat: 34.685242,
+		  lng: -79.895553,
           draggable: false,
 	  },
       {
