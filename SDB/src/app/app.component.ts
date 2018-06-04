@@ -1,18 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from './menuItem';
-import { MouseEvent } from '@agm/core';
+import { MouseEvent} from '@agm/core';
 import { ClusterManager } from '@agm/js-marker-clusterer';
 import { ImageLoaderService } from './image-loader.service';
 import { menuItems } from './menuItemsData';
-import { locations } from './locationsData' ;
-
-
-interface marker {
-	lat: number;
-	lng: number;
-	label?: string;
-	draggable: boolean;
-}
+import { locations, marker } from './locationsData' ;
 
 @Component({
     selector: 'app-root',
@@ -25,8 +17,10 @@ interface marker {
 export class AppComponent implements OnInit {
     displayedImage : string ='';
     title = 'Schaeffler Digital Board';
-    model = "Regional";
+    region = "Regional";
+    regionCode = 'REG';
     zoom: number = 4;
+    images: string[];
   // initial center position for the map
   lng: number = -80.9267;
   lat: number = 35.0950;
@@ -39,17 +33,35 @@ export class AppComponent implements OnInit {
     private markers : marker[] ;
     
  ngOnInit() {
-      this.imageLoaderService.getImage().subscribe(next => this.displayedImage = next[0]);
+     this.imageLoaderService.getImage().subscribe(next => {
+         this.images = next;
+         let i : number;
+         for(i = 0; i< this.images.length;i++) {
+             this.images[i] = 'REG_' + this.images[i];
+        }
+         console.log(this.images);
+     });
      this.menuItems = menuItems;
      this.markers = locations;
      
   }
     
-  clickedMarker(label: string, index: number) {
-    console.log(`clicked the marker: ${label || index}`)
-      this.model = label;
+    clickedMarker(m: marker){
+        console.log(m);
+        this.region = m.label;
+        this.regionCode = m.code;
+    }
+    
+    resetRegion(){
+        this.region = "Regional";
+        this.regionCode = "REG";
+    }
+  /*
+    clickedMarker(label: string, index: number) {
+    console.log(`clicked the marker: ${index}`)
+      this.region = label;
   }
-  
+  */
  // mapClicked($event: MouseEvent) {
 //    this.markers.push({
   //    lat: $event.coords.lat,

@@ -5,6 +5,7 @@ import { Observable, of, Observer, BehaviorSubject} from 'rxjs';
   providedIn: 'root'
 })
 export class ImageLoaderService {
+    private region = "REG";
     private imageSource = new BehaviorSubject<string[]>(['']);
 
 
@@ -17,5 +18,9 @@ export class ImageLoaderService {
 
     setImage(image: string[]): void {
         this.imageSource.next(image);
+    }
+    
+    setRegion(region: string): void{
+        this.region = region;
     }
 }
