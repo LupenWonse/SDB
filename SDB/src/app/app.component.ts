@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
     regionCode = 'REG';
     zoom: number = 4;
     images: string[];
+    imageNames: string[];
   // initial center position for the map
   lng: number = -80.9267;
   lat: number = 35.0950;
@@ -34,27 +35,33 @@ export class AppComponent implements OnInit {
     markers : any;
     
  ngOnInit() {
-      this.http.get('./assets/menuItems.json').subscribe(data => this.menuItems = data );
+     this.images = [];
+     this.http.get('./assets/menuItems.json').subscribe(data => this.menuItems = data );
      this.http.get('./assets/locations.json').subscribe(data => this.markers = data );
      this.imageLoaderService.getImage().subscribe(next => {
-         this.images = next;
-         let i : number;
-         for(i = 0; i< this.images.length;i++) {
-        }
-             this.images[i] = 'REG_' + this.images[i];
-         console.log(this.images);
+         this.imageNames = next;
+         this.updateImages();
      });
   }
     
     clickedMarker(m: marker){
-        console.log(m);
         this.region = m.label;
         this.regionCode = m.code;
+    }
+    
+    updateImages(){
+        let i : number;
+        this.images = [];
+        for(i = 0; i< this.imageNames.length; i++) {
+             this.images[i] = this.regionCode + '_' + this.imageNames[i];
+         }
+         console.log(this.images);
     }
     
     resetRegion(){
         this.region = "Regional";
         this.regionCode = "REG";
+        this.updateImages();
     }
   /*
     clickedMarker(label: string, index: number) {
@@ -75,7 +82,7 @@ export class AppComponent implements OnInit {
   }
     
     onImageClosed() {
-        this.displayedImage = '';
+        this.images=[];
     }
     
     styles: [

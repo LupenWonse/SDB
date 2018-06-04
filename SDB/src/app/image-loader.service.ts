@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, Observer, BehaviorSubject} from 'rxjs';
+import { Observable, of, Observer, Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageLoaderService {
     private region = "REG";
-    private imageSource = new BehaviorSubject<string[]>(['']);
+    private imageSource = new Subject<string[]>();
 
 
   constructor() {

@@ -12,7 +12,7 @@
 
     <div class="row h-100" > 
         <div class="col p-0 mainView">
-                <agm-map *ngIf="displayedImage == ''" 
+                <agm-map *ngIf="images.length == 0" 
                          [mapTypeId] = "'roadmap'"
                          [latitude]="lat"
                          [longitude]="lng"
@@ -43,7 +43,7 @@
                     </agm-marker-cluster>
                     
                 </agm-map>
-                <app-image-viewer class="h-100" [images]="images" (onClosed)="onImageClosed($event)"></app-image-viewer> 
+                <app-image-viewer *ngIf="images.length > 0" class="h-100" [images]="images" (onClosed)="onImageClosed($event)"></app-image-viewer> 
         </div> 
         <div class="col-3 sidebar p-0" > 
             <div class="btn-group-vertical w-100"> 
