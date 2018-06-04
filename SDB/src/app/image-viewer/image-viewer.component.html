@@ -1,5 +1,7 @@
-
-  <i class="fa fa-2x fa-times-circle float-left position-absolute" aria-label="Close" (click)="close()">
+<i class="fa fa-2x fa-times-circle float-left position-absolute" aria-label="Close" (click)="close()">
 </i>
-    <img *ngFor="let image of images" src="./assets/charts/{{image}}" width = 100%>
+<div class="row justify-content-center">
+    <h3>{{imageTitle}}</h3>
+</div>
+<img *ngFor="let image of images" src="./assets/charts/{{image}}" width = 100%>
 

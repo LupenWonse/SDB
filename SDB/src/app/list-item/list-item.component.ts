@@ -19,8 +19,8 @@ export class ListItemComponent implements OnInit {
 
   public onItemClick(item: MenuItem) {
       if (item.level === 3) {
-          console.log(item.charts);
           this.imageLoaderService.setImage(item.charts);
+          this.imageLoaderService.setTitle(item.label);
       }
   }
 }

@@ -11,13 +11,12 @@ import { Observable } from 'rxjs';
 export class ImageViewerComponent {
 
     @Input() images: string[];
+    @Input() imageTitle: string;
     @Output() onClosed = new EventEmitter<boolean>();
 
   constructor(private imageLoaderService: ImageLoaderService ) { }
 
     close() {
-        console.log('Emitting');
-        console.log(this.images);
         this.onClosed.emit();
     }
 

@@ -26,7 +26,8 @@ export class AppComponent implements OnInit {
   // initial center position for the map
   lng: number = -80.9267;
   lat: number = 35.0950;
-    
+    imageLabel = "";
+    imageTitle = "Chart";
     
 
     constructor(private imageLoaderService: ImageLoaderService,private http: HttpClient ) { }
@@ -38,10 +39,16 @@ export class AppComponent implements OnInit {
      this.images = [];
      this.http.get('./assets/menuItems.json').subscribe(data => this.menuItems = data );
      this.http.get('./assets/locations.json').subscribe(data => this.markers = data );
+          this.imageLoaderService.getTitle().subscribe(next => {
+              
+         this.imageLabel = next;
+        this.updateImages();
+     })
      this.imageLoaderService.getImage().subscribe(next => {
          this.imageNames = next;
          this.updateImages();
      });
+
   }
     
     clickedMarker(m: marker){
@@ -55,6 +62,7 @@ export class AppComponent implements OnInit {
         for(i = 0; i< this.imageNames.length; i++) {
              this.images[i] = this.regionCode + '_' + this.imageNames[i];
          }
+        this.imageTitle = this.imageLabel;
          console.log(this.images);
     }
     

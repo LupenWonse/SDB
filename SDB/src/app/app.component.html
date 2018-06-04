@@ -43,7 +43,7 @@
                     </agm-marker-cluster>
                     
                 </agm-map>
-                <app-image-viewer *ngIf="images.length > 0" class="h-100" [images]="images" (onClosed)="onImageClosed($event)"></app-image-viewer> 
+                <app-image-viewer *ngIf="images.length > 0" class="h-100" [images]="images" [imageTitle]="imageTitle" (onClosed)="onImageClosed($event)"></app-image-viewer> 
         </div> 
         <div class="col-3 sidebar p-0" > 
             <div class="btn-group-vertical w-100"> 
