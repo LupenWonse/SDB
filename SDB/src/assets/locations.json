@@ -1,0 +1,89 @@
+[{ "label" : "Stratford AT" ,
+"lat" : 43.369671 ,
+"lng" : -80.954288,
+ "code" : "SAT"
+ },
+
+{ "label" : "Stratford AS" ,
+"lat" : 43.356231 ,
+"lng" : -81.008342,
+ "code" : "SAS"
+ },
+
+{ "label" : "Wooster" ,
+"lat" : 40.836994 ,
+"lng" : -81.907797,
+ "code" : "WOO"
+ },
+
+{ "label" : "Joplin" ,
+"lat" : 37.04616 ,
+"lng" : -94.468736,
+ "code" : "JOP"
+ },
+
+{ "label" : "Danbury" ,
+"lat" : 41.378997 ,
+"lng" : -73.471377,
+ "code" : "DAN"
+ },
+
+{ "label" : "Fort Mill 1" ,
+"lat" : 35.091573 ,
+"lng" : -80.92714,
+ "code" : "FM1"
+ },
+
+{ "label" : "Fort Mill 2" ,
+"lat" : 35.096878 ,
+"lng" : -80.927884,
+ "code" : "FM2"
+ },
+
+{ "label" : "Cheraw 1 & 5" ,
+"lat" : 34.685242 ,
+"lng" : -79.895553,
+ "code" : "CH1"
+ },
+
+{ "label" : "Cheraw 2" ,
+"lat" : 34.69671 ,
+"lng" : -79.930007,
+ "code" : "CH2"
+ },
+
+{ "label" : "Spartanburg" ,
+"lat" : 34.981336 ,
+"lng" : -81.995681,
+ "code" : "SPA"
+ },
+
+{ "label" : "Puebla 1" ,
+"lat" : 19.160926 ,
+"lng" : -98.380319,
+ "code" : "PU1"
+ },
+
+{ "label" : "Puebla 2" ,
+"lat" : 19.16135 ,
+"lng" : -98.379021,
+ "code" : "PU2"
+ },
+
+{ "label" : "Irapuato" ,
+"lat" : 20.787781 ,
+"lng" : -101.337021,
+ "code" : "IRA"
+ },
+
+{ "label" : "Soracaba 1" ,
+"lat" : -23.43808 ,
+"lng" : -47.414647,
+ "code" : "SO1"
+ },
+
+{ "label" : "Soracaba 2" ,
+"lat" : -23.438621 ,
+"lng" : -47.416026,
+ "code" : "SO2"
+ }]

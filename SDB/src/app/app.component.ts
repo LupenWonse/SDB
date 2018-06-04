@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
     
  ngOnInit() {
       this.http.get('./assets/menuItems.json').subscribe(data => this.menuItems = data );
-     this.http.get('./assets/mapLocations.json').subscribe(data => this.markers = data );
+     this.http.get('./assets/locations.json').subscribe(data => this.markers = data );
      this.imageLoaderService.getImage().subscribe(next => {
          this.images = next;
          let i : number;
