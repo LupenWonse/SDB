@@ -9,7 +9,7 @@ import { ImageLoaderService } from '../image-loader.service';
 })
 export class ListItemComponent implements OnInit {
 
-    @Input() item: MenuItem;
+    @Input() items: MenuItem[];
     isCollapsed = false;
 
   constructor(private imageLoaderService: ImageLoaderService) { }
@@ -17,11 +17,9 @@ export class ListItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  public onItemClick() {
-    if (this.item.level === 0) {
-        this.isCollapsed = !this.isCollapsed;
-    } else if (this.item.level === 3) {
-        this.imageLoaderService.setImage(this.item.charts);
-    }
+  public onItemClick(item: MenuItem) {
+      if (item.level === 3) {
+          this.imageLoaderService.setImage(item.charts);
+      }
   }
 }
