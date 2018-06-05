@@ -1,53 +1,57 @@
 <div class="container-fluid flex-column d-flex h-100"> 
-    
-    <div class="row justify-content-center">
-        <button  *ngIf = "region != 'Regional'" class="btn btn-danger" (click)="resetRegion()">
-            <label>
-                <i class="fa fa-times-circle fa-lg"></i>
-            </label>
-        </button>
-        <h2>{{region}}</h2>
-    </div>
+    <div class="row">
+        <div class="col-9">
+            <div class="row justify-content-center">
+                <button  *ngIf = "region != 'Regional'" class="btn btn-danger" (click)="resetRegion()">
+                    <label>
+                        <i class="fa fa-times-circle fa-lg"></i>
+                    </label>
+                </button>
+                <h2>{{region}}</h2>
+            </div>
 
 
-    <div class="row h-100" > 
-        <div class="col p-0 mainView">
-                <agm-map *ngIf="images.length == 0" 
-                         [mapTypeId] = "'roadmap'"
-                         [latitude]="lat"
-                         [longitude]="lng"
-                         [zoom]="zoom"
-                         [disableDefaultUI]="true"
-                         [zoomControl]="true"
-                         [mapDraggable] = "true"
-                         [styles] = "[
-                                        {
-                                          featureType: 'administrative.province',
-                                          elementType: 'labels.text',
-                                          stylers: [{visibility:'off'}]
-                                        }
-                                      ]"
-                         >
-                    <agm-marker-cluster imagePath="./assets/cluster">
-                    <agm-marker 
-                                *ngFor="let m of markers; let i = index"
-                                iconUrl="./assets/label.png"
-                                (markerClick)="clickedMarker(m, i)"
-                                [latitude]="m.lat"
-                                [longitude]="m.lng"
-                                [label]="m.label"
-                                [title]="test"
-                                [markerDraggable]="m.draggable"
-                                (dragEnd)="markerDragEnd(m, $event)">
-                    </agm-marker>
-                    </agm-marker-cluster>
-                    
-                </agm-map>
-                <app-image-viewer *ngIf="images.length > 0" class="h-100" [images]="images" [imageTitle]="imageTitle" (onClosed)="onImageClosed($event)"></app-image-viewer> 
-        </div> 
+            <div class="row h-100" > 
+                <div class="col p-0 mainView">
+                    <agm-map *ngIf="images.length == 0" 
+                             [mapTypeId] = "'roadmap'"
+                             [latitude]="lat"
+                             [longitude]="lng"
+                             [zoom]="zoom"
+                             [disableDefaultUI]="true"
+                             [zoomControl]="true"
+                             [mapDraggable] = "true"
+                             [styles] = "[
+                                         {
+                                         featureType: 'administrative.province',
+                                         elementType: 'labels.text',
+                                         stylers: [{visibility:'off'}]
+                                         }
+                                         ]"
+                             >
+                        <agm-marker-cluster imagePath="./assets/cluster">
+                            <agm-marker 
+                                        *ngFor="let m of markers; let i = index"
+                                        iconUrl="./assets/label.png"
+                                        (markerClick)="clickedMarker(m, i)"
+                                        [latitude]="m.lat"
+                                        [longitude]="m.lng"
+                                        [label]="m.label"
+                                        [title]="test"
+                                        [markerDraggable]="m.draggable"
+                                        (dragEnd)="markerDragEnd(m, $event)">
+                            </agm-marker>
+                        </agm-marker-cluster>
+
+                    </agm-map>
+                    <app-image-viewer *ngIf="images.length > 0" class="h-100" [images]="images" [imageTitle]="imageTitle" (onClosed)="onImageClosed($event)"></app-image-viewer> 
+                </div> 
+            </div>
+
+        </div>
         <div class="col-3 sidebar p-0" > 
             <div class="btn-group-vertical w-100"> 
                 <app-list-item [items]="menuItems"></app-list-item> 
             </div> 
-        </div>  
+        </div>
     </div>
