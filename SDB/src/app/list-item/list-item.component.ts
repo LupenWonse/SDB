@@ -10,6 +10,7 @@ import { ImageLoaderService } from '../image-loader.service';
 export class ListItemComponent implements OnInit {
 
     @Input() items: MenuItem[];
+    selectedItem: MenuItem;
     isCollapsed = false;
 
   constructor(private imageLoaderService: ImageLoaderService) { }
@@ -19,6 +20,7 @@ export class ListItemComponent implements OnInit {
 
   public onItemClick(item: MenuItem) {
       if (item.level === 3) {
+            this.selectedItem = item;
           this.imageLoaderService.setImage(item.charts);
           this.imageLoaderService.setTitle(item.label);
       }
