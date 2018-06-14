@@ -31,3 +31,7 @@ app-image-viewer{
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 }
+
+#selectedButton{
+    background-color: indianred;
+}

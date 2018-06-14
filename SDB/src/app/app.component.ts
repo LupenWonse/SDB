@@ -37,7 +37,9 @@ export class AppComponent implements OnInit {
     
  ngOnInit() {
      this.images = [];
-     this.http.get('./assets/menuItems.json').subscribe(data => this.menuItems = data );
+     this.http.get('./assets/menuItems.json').subscribe(data => {this.menuItems = data;});
+     
+     
      this.http.get('./assets/locations.json').subscribe(data => this.markers = data );
           this.imageLoaderService.getTitle().subscribe(next => {
               
@@ -60,7 +62,7 @@ export class AppComponent implements OnInit {
         let i : number;
         this.images = [];
         for(i = 0; i< this.imageNames.length; i++) {
-             this.images[i] = this.regionCode + '_' + this.imageNames[i];
+             this.images[i] = this.regionCode + '/' + this.imageNames[i];
          }
         this.imageTitle = this.imageLabel;
          console.log(this.images);
@@ -69,6 +71,7 @@ export class AppComponent implements OnInit {
     resetRegion(){
         this.region = "Regional";
         this.regionCode = "REG";
+        this.imageNames = [];
         this.updateImages();
     }
   /*
