@@ -37,7 +37,15 @@ export class AppComponent implements OnInit {
     
  ngOnInit() {
      this.images = [];
-     this.http.get('./assets/menuItems.json').subscribe(data => {this.menuItems = data;});
+     this.http.get('./assets/menuItems.json').subscribe(data => {
+         this.menuItems = data;
+         for (let menuItem of this.menuItems){
+             menuItem.hidden = false;
+             if (menuItem.id > 100 && menuItem.level > 1){
+                 menuItem.hidden = true;
+             }
+         }
+     });
      
      
      this.http.get('./assets/locations.json').subscribe(data => this.markers = data );

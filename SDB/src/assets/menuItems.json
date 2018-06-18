@@ -11,7 +11,7 @@
  "charts" : [  ] },
 
 { "id" : 2 ,
-"level" : 0 ,
+"level" : 1 ,
 "label" : "Region Americas",
  "icon" : " fa-globe",
  "charts" : [  ] },

@@ -20,19 +20,44 @@ export class ListItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  public onItemClick(item: MenuItem) {
-      if (item.level === 3) {
-          this.selectedItem = item;
-          this.imageLoaderService.setImage(item.charts);
-          if (item.id < 100){
-            this.imageLoaderService.setTitle(item.label);
-          } else if (item.id >= 100 && item.id < 200) {
-            this.imageLoaderService.setTitle('Automotive - ' + item.label);
-          } else if (item.id >= 200 && item.id < 300) {
-            this.imageLoaderService.setTitle('Industrial - ' + item.label);
+  public onItemClick(clickedItem: MenuItem) {
+      if (clickedItem.level === 1) {
+          if (clickedItem.id < 100) {
+            for (const item of this.items) {
+                item.hidden = false;
+                if (item.id >= 100 && (item.level === 3 || item.level === 2)) {
+                    item.hidden = true;
+                }
+            }
+          } else if (clickedItem.id >= 100 && clickedItem.id < 200) {
+              for (const item of this.items) {
+                  item.hidden = false;
+                  if ( (item.id < 100 || item.id >=200) && (item.level === 3 || item.level === 2) ) {
+                      item.hidden = true;
+                  }
+              }
+          } else if (clickedItem.id >= 200 && clickedItem.id < 300) {
+              for (const item of this.items) {
+                  item.hidden = false;
+                  if ((item.id < 200 || item.id >=300) && (item.level === 3 || item.level === 2)) {
+                      item.hidden = true;
+                  }
+              }
         }
-          
-      } if (item.level === 4){
+      }
+
+      if (clickedItem.level === 3) {
+          this.selectedItem = clickedItem;
+          this.imageLoaderService.setImage(clickedItem.charts);
+          if (clickedItem.id < 100) {
+            this.imageLoaderService.setTitle(clickedItem.label);
+          } else if (clickedItem.id >= 100 && clickedItem.id < 200) {
+            this.imageLoaderService.setTitle('Automotive - ' + clickedItem.label);
+          } else if (clickedItem.id >= 200 && clickedItem.id < 300) {
+            this.imageLoaderService.setTitle('Industrial - ' + clickedItem.label);
+        }
+
+      } if (clickedItem.level === 4) {
         this.http.get('./assets/charts/' + this.region + '/link.txt', {responseType: 'text'}).subscribe(data => {window.open(data);} );
       }
   }

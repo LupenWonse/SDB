@@ -4,5 +4,5 @@ export class MenuItem {
     icon: string;
     label: string;
     charts: string[];
-    hidden?: false;
+    hidden?: boolean = false;
 }
