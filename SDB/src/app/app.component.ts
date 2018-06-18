@@ -18,7 +18,7 @@ import { locations, marker } from './locationsData' ;
 export class AppComponent implements OnInit {
     displayedImage : string ='';
     title = 'Schaeffler Digital Board';
-    region = "Regional";
+    region = "Region Americas";
     regionCode = 'REG';
     zoom: number = 4;
     images: string[];
@@ -69,7 +69,7 @@ export class AppComponent implements OnInit {
     }
     
     resetRegion(){
-        this.region = "Regional";
+        this.region = "Region Americas";
         this.regionCode = "REG";
         this.imageNames = [];
         this.updateImages();
