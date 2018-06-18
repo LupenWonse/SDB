@@ -2,3 +2,5 @@
 SDB/package-lock\.json
 
 SDB/package\.json
+
+SDB/src/app/secrets/

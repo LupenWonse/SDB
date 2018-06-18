@@ -14,6 +14,8 @@ import { AccordionComponent } from './accordion/accordion.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { ImageViewerComponent } from './image-viewer/image-viewer.component';
 
+import {apiKey} from './secrets/AGMApiKey';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,7 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component';
     NgbModule.forRoot(),
     FormsModule,
       HttpClientModule,
-      AgmCoreModule.forRoot(),
+      AgmCoreModule.forRoot({apiKey: apiKey}),
       AgmJsMarkerClustererModule,
   ],
   providers: [],
