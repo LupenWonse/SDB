@@ -29,14 +29,14 @@
                                          }
                                          ]"
                              >
-                        <agm-marker-cluster imagePath="./assets/cluster">
+                        <agm-marker-cluster [imagePath]="'./assets/cluster'">
                             <agm-marker 
                                         *ngFor="let m of markers; let i = index"
-                                        iconUrl="./assets/label.png"
+                                        iconUrl="./assets/industry.png"
                                         (markerClick)="clickedMarker(m, i)"
                                         [latitude]="m.lat"
                                         [longitude]="m.lng"
-                                        [label]="m.label"
+                                        [label]="{color: 'white', fontSize: '12pt', text: m.label, fontWeight: 'bolder'}"
                                         [title]="test"
                                         [markerDraggable]="m.draggable"
                                         (dragEnd)="markerDragEnd(m, $event)">

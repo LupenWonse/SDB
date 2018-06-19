@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from './menuItem';
 import { MouseEvent } from '@agm/core';
 import { HttpClient } from '@angular/common/http';
-import { ClusterManager } from '@agm/js-marker-clusterer';
+import { ClusterManager} from '@agm/js-marker-clusterer';
+import {ClusterStyle} from '@agm/js-marker-clusterer/services/google-clusterer-types'
 import { ImageLoaderService } from './image-loader.service';
 import { menuItems } from './menuItemsData';
 import { locations, marker } from './locationsData' ;
@@ -34,6 +35,8 @@ export class AppComponent implements OnInit {
     
     menuItems : any;
     markers : any;
+    
+    stlye : ClusterStyle[] = [{url: "./assets/cluster"}];
     
  ngOnInit() {
      this.images = [];
