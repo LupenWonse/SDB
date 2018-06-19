@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { MenuItem } from '../menuItem';
 import { ImageLoaderService } from '../image-loader.service';
 import { HttpClient } from '@angular/common/http';
@@ -14,36 +14,23 @@ export class ListItemComponent implements OnInit {
     @Input() region: String;
     selectedItem: MenuItem;
     isCollapsed = false;
+    isInitialized = false;
 
   constructor(private imageLoaderService: ImageLoaderService, private http: HttpClient) { }
 
   ngOnInit() {
   }
+    
+    ngOnChanges() {
+        if (this.items != undefined && !this.isInitialized) {
+            this.updateItems(1);
+            this.isInitialized = true;
+        }
+    }
 
   public onItemClick(clickedItem: MenuItem) {
       if (clickedItem.level === 1) {
-          if (clickedItem.id < 100) {
-            for (const item of this.items) {
-                item.hidden = false;
-                if (item.id >= 100) {
-                    item.hidden = true;
-                }
-            }
-          } else if (clickedItem.id >= 100 && clickedItem.id < 200) {
-              for (const item of this.items) {
-                  item.hidden = false;
-                  if (item.id < 100 || item.id >= 200) {
-                      item.hidden = true;
-                  }
-              }
-          } else if (clickedItem.id >= 200 && clickedItem.id < 300) {
-              for (const item of this.items) {
-                  item.hidden = false;
-                  if (item.id < 200 || item.id >= 300) {
-                      item.hidden = true;
-                  }
-              }
-        }
+          this.updateItems(clickedItem.id);
       }
 
       if (clickedItem.level === 3) {
@@ -61,4 +48,36 @@ export class ListItemComponent implements OnInit {
         this.http.get('./assets/charts/' + this.region + '/link.txt', {responseType: 'text'}).subscribe(data => {window.open(data);} );
       }
   }
+    
+    
+    public updateItems(currentId: number) {
+        console.log("updating Items");
+        if (currentId < 100) {
+            for (const item of this.items) {
+                if (item.id >= 100 && item.level != 4) {
+                    item.hidden = true;
+                } else { 
+                    item.hidden = false;
+                }
+            }
+          } else if (currentId >= 100 && currentId < 200) {
+              for (const item of this.items) {
+                  item.hidden = false;
+                  if ((item.id < 100 || item.id >= 200) && item.level != 4 && item.id != 0) {
+                      item.hidden = true;
+                  } else {
+                      item.hidden = false;
+                  }
+              }
+          } else if (currentId >= 200 && currentId < 300) {
+              for (const item of this.items) {
+                  
+                  if ((item.id < 200 || item.id >= 300) && item.level != 4  && item.id != 0) {
+                      item.hidden = true;
+                  } else {
+                      item.hidden = false;
+                  }
+              }
+        }
+    }
 }

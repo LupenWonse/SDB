@@ -39,12 +39,6 @@ export class AppComponent implements OnInit {
      this.images = [];
      this.http.get('./assets/menuItems.json').subscribe(data => {
          this.menuItems = data;
-         for (let menuItem of this.menuItems){
-             menuItem.hidden = false;
-             if (menuItem.id > 100 && menuItem.level > 1){
-                 menuItem.hidden = true;
-             }
-         }
      });
      
      
