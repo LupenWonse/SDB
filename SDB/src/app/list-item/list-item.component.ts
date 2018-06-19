@@ -25,21 +25,21 @@ export class ListItemComponent implements OnInit {
           if (clickedItem.id < 100) {
             for (const item of this.items) {
                 item.hidden = false;
-                if (item.id >= 100 && (item.level === 3 || item.level === 2)) {
+                if (item.id >= 100) {
                     item.hidden = true;
                 }
             }
           } else if (clickedItem.id >= 100 && clickedItem.id < 200) {
               for (const item of this.items) {
                   item.hidden = false;
-                  if ( (item.id < 100 || item.id >=200) && (item.level === 3 || item.level === 2) ) {
+                  if (item.id < 100 || item.id >= 200) {
                       item.hidden = true;
                   }
               }
           } else if (clickedItem.id >= 200 && clickedItem.id < 300) {
               for (const item of this.items) {
                   item.hidden = false;
-                  if ((item.id < 200 || item.id >=300) && (item.level === 3 || item.level === 2)) {
+                  if (item.id < 200 || item.id >= 300) {
                       item.hidden = true;
                   }
               }

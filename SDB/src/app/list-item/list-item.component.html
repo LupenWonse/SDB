@@ -1,6 +1,8 @@
-<button *ngFor="let item of items" class="btn btn btn-block m-0" [class.d-none]="(item.id == 0 && region =='REG') || item.hidden" [class.active]="item == this.selectedItem" [class.btn-success]="item == this.item" [class.btn-primary]="item.level==0" [class.btn-success]="item.level==1" [class.btn-dark]="item.level==2" [class.btn-outline-secondary]="item.level==3 || item.level==4" (click)="onItemClick(item);">
+<button *ngFor="let item of items" class="btn btn btn-block m-0" [class.d-none]="(item.id == 0 && region =='REG') || (item.hidden && item.level > 1 && item.level != 4)    " [class.active]="item == this.selectedItem" [class.btn-success]="item == this.item" [class.btn-primary]="item.level==0" [class.btn-success]="item.level==1" [class.btn-dark]="item.level==2" [class.btn-outline-secondary]="item.level==3 || item.level==4" (click)="onItemClick(item);">
     <i class="fa {{item.icon}} fa-lg fa-pull-left"></i>
     <label ngButtonLabel>
         {{item.label}}
     </label>
+        <i *ngIf="item.level === 1" [class.fa-chevron-right]="item.hidden" [class.fa-chevron-down]="!item.hidden" class="fa fa-lg fa-pull-right"></i>
+
 </button>
